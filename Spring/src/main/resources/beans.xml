@@ -12,12 +12,15 @@
 <context:component-scan base-package="com.jonam.spring.datasupport.dao" />
 
 	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
 		<property name="url" value="jdbc:derby://localhost:1527/sample;create=true" />
 		<property name="username" value="admin" />
 		<property name="password" value="admin"/>
+		<property name="initialSize"  value="2" />
+		<property name="maxActive"  value="5" /> 
 		
+			
 	</bean>
 	
 	<bean id="personDAO" class="com.jonam.spring.datasupport.dao.PersonDAO">

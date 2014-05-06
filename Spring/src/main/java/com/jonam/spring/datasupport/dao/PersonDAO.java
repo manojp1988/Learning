@@ -39,7 +39,6 @@ public class PersonDAO extends JdbcDaoSupport{
 	
 	private  static final class PersonRowMapper implements RowMapper<Person>{
 
-		@Override
 		public Person mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Person person = new Person();
 			person.setId(rs.getInt("ID"));
