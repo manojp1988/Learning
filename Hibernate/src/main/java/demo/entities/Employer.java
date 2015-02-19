@@ -2,6 +2,7 @@ package demo.entities;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ public class Employer {
   @GeneratedValue
   private int id;
   private String name;
-  @OneToMany(mappedBy="employer", fetch=FetchType.LAZY)
+  @OneToMany(mappedBy="employer", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
   private List<Employee> employees;
 
 }
