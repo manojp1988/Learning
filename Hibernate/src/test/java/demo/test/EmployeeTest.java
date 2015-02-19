@@ -42,7 +42,6 @@ public class EmployeeTest {
     
     Transaction t = session.beginTransaction();
     session.save(emp1);
-   // session.save(employer);
     t.commit();
     assertEquals("true", "true");
     
