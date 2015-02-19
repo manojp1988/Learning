@@ -46,4 +46,21 @@ public class EmployeeTest {
     assertEquals("true", "true");
     
   }
+  
+  @Test
+  public void retrieveEmployee(){
+      Employee emp = (Employee) session.load(Employee.class, 1);
+      assertNotNull(emp);
+      
+      Employer employer = (Employer) session.load(Employer.class, 1);
+      assertNotNull(employer);
+      
+      assertEquals("Manoj", emp.getName());
+      assertEquals("TCS", emp.getEmployer().getName());
+      
+    //  assertEquals("TCS", employer.getName());
+      //assertEquals("Manoj", employer.getEmployees().get(0).getName());
+  }
+  
+  
 }
