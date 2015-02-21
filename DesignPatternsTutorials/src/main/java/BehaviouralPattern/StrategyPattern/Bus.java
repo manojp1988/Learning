@@ -1,4 +1,4 @@
-package demo.StrategyPattern;
+package BehaviouralPattern.StrategyPattern;
 
 public class Bus implements IRide {
 

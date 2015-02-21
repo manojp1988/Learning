@@ -1,4 +1,4 @@
-package demo.StrategyPattern;
+package BehaviouralPattern.StrategyPattern;
 
 import lombok.Data;
 

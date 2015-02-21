@@ -11,4 +11,4 @@
  * @author manoj
  *
  */
-package demo.StrategyPattern;
+package BehaviouralPattern.StrategyPattern;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package demo.StrategyPattern;
+package BehaviouralPattern.StrategyPattern;
 
 /**
  * @author manoj
