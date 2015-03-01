@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="dialect">org.hibernate.dialect.DerbyDialect</property>
+		<property name="connection.url">jdbc:derby:/Users/manoj/MyDB;create=true</property>
+		<property name="connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
+        <property name="show_sql">true</property>
+		<mapping class="demo.app.entities.Student"/>
+	</session-factory>
+</hibernate-configuration>
