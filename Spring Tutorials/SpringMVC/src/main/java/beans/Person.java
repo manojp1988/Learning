@@ -1,17 +1,19 @@
 package beans;
 
+import javax.validation.constraints.NotNull;
 public class Person {
-
-	private String firstName1;
+	@NotNull 
+	private String firstName;
 	private String lastName;
 	private String userName;
 	private String  password;
 	
 	public String getFirstName() {
-		return firstName1;
+		return firstName;
 	}
-	public void setFirstName(String firstName1) {
-		this.firstName1 = firstName1;
+	
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	public String getLastName() {
 		return lastName;

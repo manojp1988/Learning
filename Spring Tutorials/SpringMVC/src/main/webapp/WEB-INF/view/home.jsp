@@ -10,5 +10,5 @@
   <body>
     <h1>Welcome to Spittr</h1>
     <a href="<c:url value="/friends" />">List of Friends</a> |
-    <a href="<c:url value="/friends/register" />">Register</a>
+    <a href="<c:url value="/register" />">Register</a>
   </body>
