@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import beans.Person;
 
@@ -51,9 +52,12 @@ public class FriendsController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/register")
-	public String addUserForm(Person person) {
+	public String addUserForm(Person person, Model model/*,RedirectAttributes redir*/) {
 		System.out.println("Person=" +person.getFirstName());
-		return "redirect:friends/"+1;
+		model.addAttribute("username","manoj" );
+		//redir.addFlashAttribute("manoj", "manoj"); To pass variables across redirect.
+		//return "redirect:friends";
+		return "result";
 	}
 
 }

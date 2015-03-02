@@ -8,12 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<c:forEach var="friend" items="${friends }">
-	<c:out value="${friend}"></c:out>
-	<br/>
-</c:forEach>
-
-<c:out value="${manoj}"/>
+<c:out value="${username}"/>
 </body>
 </html>
