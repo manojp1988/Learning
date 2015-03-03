@@ -1,3 +1,12 @@
+/*
+In java, network connections, database urls  etc uses string as
+parameter. So that even if the reference is changed after assign the
+value to the connection, the underlying method who uses the method will
+not change..
+
+This provides security..
+*/
+
 public class StringImmutable {
 	public static void main(String[] args) {
 		String s = "ABC";
