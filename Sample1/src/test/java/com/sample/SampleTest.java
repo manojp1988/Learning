@@ -5,28 +5,32 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.ContextHierarchy;
+import org.springframework.test.context.SmartContextLoader;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
+import org.springframework.test.context.support.DelegatingSmartContextLoader;
 
 import com.config.SpringConfiguration;
-import com.config.SpringConfiguration.Gatway;
+import com.config.SpringConfiguration.helloService;
 import com.model.XmlService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextHierarchy({@ContextConfiguration(classes = SpringConfiguration.class),
-    @ContextConfiguration(locations = {"/applicationContext.xml"})})
+@ContextHierarchy({
+ //@ContextConfiguration(locations = {"/applicationContext.xml"}),
+ @ContextConfiguration(classes = SpringConfiguration.class),
+ })
 public class SampleTest {
 
+  @Autowired
+  helloService hello;
 
   @Autowired
-  Gatway gtwy;
-  
-  @Autowired
-  XmlService xmlGtwy;
+  XmlService xmlSer;
 
   @Test
   public void test() {
-   // xmlGtwy.sayHello("Manoj");
-    gtwy.sayHello("Manoj");
-  }
+    // System.out.println(hello.sayHello("Manoj"));
 
+    xmlSer.sayHello("Jeeva");
+  }
 }

@@ -1,8 +1,15 @@
 package com.model;
 
-public class XMLInterceptor {
+import org.springframework.messaging.Message;
+import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.support.ChannelInterceptorAdapter;
 
-  public void sayHello(String msg){
-    System.out.println("Hello "+msg);
+public class XMLInterceptor extends ChannelInterceptorAdapter {
+
+  @Override
+  public Message<?> preSend(Message<?> message, MessageChannel channel) {
+    System.out.println("XML Intecepted "+message.getPayload());
+    return message;
   }
+
 }
