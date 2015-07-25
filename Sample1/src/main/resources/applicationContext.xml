@@ -8,7 +8,16 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
 		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.1.xsd">
 
-	<int:channel-interceptor pattern="*_EL_*" order="2">
+	<int:channel-interceptor pattern="*_EL_*"
+		order="2">
 		<beans:bean class="com.model.HelloInterceptor" />
 	</int:channel-interceptor>
+	<int:gateway id="xmlGatwy" service-interface="com.model.XmlService"
+		default-request-channel="SVC_EL_CHNL" />
+		
+	<beans:bean id="xmlInterceptor" class="com.model.XMLInterceptor"/>
+
+	<int:service-activator id="xmlActivator"
+		input-channel="SVC_EL_CHNL" ref="xmlInterceptor" method="sayHello"
+		output-channel="nullChannel" />
 </beans:beans>
