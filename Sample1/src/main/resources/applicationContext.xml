@@ -10,14 +10,17 @@
 
 	<int:channel-interceptor pattern="*_EL_*"
 		order="2">
-		<beans:bean class="com.model.HelloInterceptor" />
+		<beans:bean class="com.model.XMLInterceptor" />
 	</int:channel-interceptor>
 	<int:gateway id="xmlGatwy" service-interface="com.model.XmlService"
 		default-request-channel="SVC_EL_CHNL" />
 		
-	<beans:bean id="xmlInterceptor" class="com.model.XMLInterceptor"/>
-
+	<beans:bean id="xmlBean" class="com.model.XMLBean"/>
+	
+	
+	<!-- <beans:bean id="javaConfig" class ="com.config.SpringConfiguration" /> -->
+	
 	<int:service-activator id="xmlActivator"
-		input-channel="SVC_EL_CHNL" ref="xmlInterceptor" method="sayHello"
+		input-channel="SVC_EL_CHNL" ref="xmlBean" method="sayHello"
 		output-channel="nullChannel" />
 </beans:beans>
